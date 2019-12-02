@@ -31,10 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageHandler handler_menu = new ImageHandler(new WeakReference<MainActivity>(this));
     private ViewPager viewPager;
     private ViewPager viewPager_menu;
-    private RadioGroup radio;
-    private RadioButton radiobutton1;
-    private RadioButton radiobutton2;
-    private RadioButton radiobutton3;
     private TextView mTextMessage;
 
     Boolean look;
@@ -95,11 +91,7 @@ public class MainActivity extends AppCompatActivity {
         // 初始化viewPager的內容
         viewPager = (ViewPager) findViewById(R.id.viewP1);
         viewPager_menu = (ViewPager) findViewById(R.id.viewP2);
-        //circle
-        radio = (RadioGroup) findViewById(R.id.radiogroup);
-        radiobutton1 = (RadioButton) findViewById(R.id.radiobutton1);
-        radiobutton2 = (RadioButton) findViewById(R.id.radiobutton2);
-        radiobutton3 = (RadioButton) findViewById(R.id.radiobutton3);
+
         //資料集
         ArrayList<ImageView> views = new ArrayList<ImageView>();
         ArrayList<ImageView> view_menu = new ArrayList<ImageView>();
@@ -131,17 +123,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int i) {
                 handler.sendMessage(Message.obtain(handler, ImageHandler.MSG_PAGE_CHANGED, i, 0));
-                switch (i) {
-                    case 0:
-                        radio.check(R.id.radiobutton1);
-                        break;
-                    case 1:
-                        radio.check(R.id.radiobutton2);
-                        break;
-                    case 2:
-                        radio.check(R.id.radiobutton3);
-                        break;
-                }
             }
 
             @Override
@@ -156,18 +137,6 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         break;
                 }
-            }
-        });
-
-        radio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == radiobutton1.getId())
-                    viewPager.setCurrentItem(0);
-                else if (checkedId == radiobutton2.getId())
-                    viewPager.setCurrentItem(1);
-                else if (checkedId == radiobutton3.getId())
-                    viewPager.setCurrentItem(2);
             }
         });
 

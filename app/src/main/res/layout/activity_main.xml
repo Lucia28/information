@@ -54,7 +54,7 @@
                 android:layout_height="400dp"
                 android:layout_gravity="center">
             </android.support.v4.view.ViewPager>
-
+<!--
             <RadioGroup
                 android:id="@+id/radiogroup"
                 android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                     android:background="@drawable/circle"/>
 
             </RadioGroup>
-
+!-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,7 +93,6 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/viewP1"
                     android:layout_marginLeft="52dp"
-
                     android:text="@string/content1"
                     android:textColor="@color/DarkOrange"
                     android:textSize="20sp" />
@@ -219,12 +218,6 @@
                 android:layout_height="400dp"
                 android:layout_gravity="center">
             </android.support.v4.view.ViewPager>
-
-            <ImageView
-                android:id="@+id/dot1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/view"/>
 
             <TextView
                 android:id="@+id/textView10"
